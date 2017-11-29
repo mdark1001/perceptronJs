@@ -1,0 +1,20 @@
+{
+  "name": "perceptronjs",
+  "version": "1.0.0",
+  "description": "Un simple ejemplo de uso de percepro de la red neuronal, reconociendo las vocales.Y teniendo la arquitectura de la red.    ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "perceptron",
+    "neuronal",
+    "network",
+    "javascript",
+    "IA"
+  ],
+  "author": "MiguelCabrera1001",
+  "license": "Apache-2.0"
+}
