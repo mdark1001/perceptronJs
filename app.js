@@ -1,5 +1,5 @@
-const perceptronjs = require('./perceptronSimple');
-const utilities = require('./utilities');
+const perceptronjs = require('./lib/perceptronSimple');
+const utilities = require('./lib/utilities');
 var perceptronSimple = new perceptronjs(25);
 
 let patrones = null;
