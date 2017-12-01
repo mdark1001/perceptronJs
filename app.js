@@ -1,20 +1,26 @@
 const perceptronjs = require('./lib/perceptronSimple');
 const utilities = require('./lib/utilities');
-var perceptronSimple = new perceptronjs(25);
-
+const size_input = 24 * 24
+const fs = require('fs');
 let patrones = null;
-utilities.load_patterns('test.txt', 25).then(data => {
-  console.log(data);
-  patrones = data;
-  console.log(perceptronSimple.train(patrones, function(pesos) {
-    console.log(pesos);
-    perceptronSimple.saveNet();
-    perceptronSimple.load(function() {
-      console.log(perceptronSimple.test(patrones[1].set));
-    });
-  }));
+utilities.load_patterns('geometric_form/data.txt', size_input).then(data => {
+    patrones = data;
 
-});
+    var perceptronSimple = new perceptronjs(size_input);
+    perceptronSimple.train(patrones, function(pesos) {
+      //console.log(pesos);
+      perceptronSimple.saveNet();
+      perceptronSimple.load(function() {
+        console.log("Pertenece a la clase de los : " + (
+          perceptronSimple.test(patrones[1].set) == 1 ?
+          "Circulos" : "Cuadrados"));
+      });
+    });
+
+  },
+  function(err) {
+    console.log(err);
+  });
 
 //console.log(patrones);
 /* Simple uso de NAND

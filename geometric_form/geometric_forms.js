@@ -1,9 +1,10 @@
 const perceptronjs = require('./perceptronSimple');
 const utilities = require('./utilities');
-var perceptronSimple = new perceptronjs(25);
+
 
 let patrones = null;
-utilities.load_patterns('test.txt', 25).then(data => {
+utilities.load_patterns('test.txt', 64 * 64).then(data => {
+  var perceptronSimple = new perceptronjs(25);
   console.log(data);
   patrones = data;
   console.log(perceptronSimple.train(patrones, function(pesos) {
